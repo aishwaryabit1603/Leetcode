@@ -5,10 +5,6 @@ public:
         {
             int i = 0;
             int j = 0;
-            // while(i < nums.size()){
-            //     if(nums[i] == 0) break;
-            //     i++;
-            // }
             while(j < nums.size() && i < nums.size())
             {
                 if(nums[i] != 0){
