@@ -11,19 +11,23 @@ public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB){
         ListNode *ptr = headA;
         ListNode *ptr2 = headB;
-        
-        set<ListNode*> s1;
-        while(ptr)
-        {
-            s1.insert(ptr);
-            ptr = ptr->next;
-            
+        while(ptr != ptr2){
+            ptr = ptr ? ptr->next : headB;
+            ptr2 = ptr2 ? ptr2->next : headA;
         }
-        while(ptr2){
-            if(s1.find(ptr2) != s1.end()) return ptr2;
+        return ptr2;
+//         set<ListNode*> s1;
+//         while(ptr)
+//         {
+//             s1.insert(ptr);
+//             ptr = ptr->next;
             
-            ptr2 = ptr2->next;
-        }
+//         }
+//         while(ptr2){
+//             if(s1.find(ptr2) != s1.end()) return ptr2;
+            
+//             ptr2 = ptr2->next;
+//         }
         return NULL;
     }
 };
