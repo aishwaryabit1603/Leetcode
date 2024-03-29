@@ -4,17 +4,28 @@ public:
         int n = nums.size();
         
         if(k > n) k %= n;
-        stack<int> s1;
-        int m = n-k;
-        for(int i = m;i < n;i++){
-            s1.push(nums[i]);
+        int i = 0;
+        int j = n - 1;
+        while(i <= j){
+            swap(nums[i],nums[j]);
+            i++;
+            j--;
         }
-        for(int i = 0;i < m;i++){
-            s1.push(nums[i]);
+        
+        i = 0;
+        j = k-1;
+        while(i <= j){
+            swap(nums[i],nums[j]);
+            i++;
+            j--;
         }
-        for(int i = n-1;i > -1;i--){
-            nums[i] = s1.top();
-            s1.pop();
+        
+        i = k;
+        j = n - 1;
+        while(i <= j){
+            swap(nums[i],nums[j]);
+            i++;
+            j--;
         }
     }
 };
