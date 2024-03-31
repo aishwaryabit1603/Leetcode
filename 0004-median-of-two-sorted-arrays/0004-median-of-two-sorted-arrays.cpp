@@ -23,10 +23,12 @@ public:
             }
             return nums1[n1];
         }
-        int arr[t];
+        int x = t/2+1;
+        vector<int>arr(x);
         int k = 0;
-        int x = t/2;
-        while(i < n && j < m){
+       
+        int size = 0;
+        while(i < n && j < m && k < x){
             if(nums1[i] <= nums2[j]){
                 arr[k] = nums1[i];
                 i++;
@@ -37,20 +39,20 @@ public:
             }
             k++;
         }
-        while(i < n){
+        while(i < n && k < x){
             arr[k] = nums1[i];
             i++;
             k++;
         }
-        while(j < m){
+        while(j < m && k < x){
             arr[k] = nums2[j];
             j++;
             k++;
         }
-        int n1 = t/2;
+        // cout << arr[arr.size()-1];
         if(t % 2 == 0){
-            return double((arr[n1] + arr[n1-1]))/2;
+            return double((arr[arr.size()-1] + arr[arr.size()-2]))/2;
         }
-        return double(arr[n1]);
+        return double(arr[arr.size()-1]);
     }
 };
