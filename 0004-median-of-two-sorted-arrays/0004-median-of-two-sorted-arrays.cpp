@@ -25,6 +25,7 @@ public:
         }
         int arr[t];
         int k = 0;
+        int x = t/2;
         while(i < n && j < m){
             if(nums1[i] <= nums2[j]){
                 arr[k] = nums1[i];
