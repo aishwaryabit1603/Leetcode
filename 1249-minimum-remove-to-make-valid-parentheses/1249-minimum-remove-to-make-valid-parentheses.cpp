@@ -17,7 +17,6 @@ public:
                 s1.pop();
             }
         }
-        cout << ans << endl;
         if(!s1.empty()){
             int len = s1.size();
             if(ans.length() == len) return "";
@@ -28,7 +27,6 @@ public:
                     len--;
                 }
             }
-            
         }
         return ans;
     }
