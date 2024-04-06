@@ -31,7 +31,6 @@ public:
                 if(node->right) q.push(node->right);
             }
             ans.push_back(v1);
-            v1.clear();
         }
         return ans;
     }
