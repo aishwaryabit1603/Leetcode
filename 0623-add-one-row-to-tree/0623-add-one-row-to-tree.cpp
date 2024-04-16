@@ -11,15 +11,6 @@
  */
 class Solution {
 public:
-//     TreeNode * check(TreeNode * root, int &k ,int dep){
-//         if(root == NULL) return NULL;
-//         k++;
-        
-//         if(dep == k) return root;
-        
-//         return check(root->left,k,dep);
-//         return check(root->right,k,dep);
-//     }
     TreeNode* addOneRow(TreeNode* root, int val, int depth) {
         TreeNode * n1 = new TreeNode(val);
         
