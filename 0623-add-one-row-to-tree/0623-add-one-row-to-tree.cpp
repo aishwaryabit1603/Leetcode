@@ -13,7 +13,6 @@ class Solution {
 public:
     TreeNode* addOneRow(TreeNode* root, int val, int depth) {
         TreeNode * n1 = new TreeNode(val);
-        
         if(depth == 1){
             n1->left = root;
             return n1;
