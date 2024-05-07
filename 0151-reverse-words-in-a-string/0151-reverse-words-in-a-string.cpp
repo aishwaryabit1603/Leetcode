@@ -18,16 +18,13 @@ public:
         for(;i <= n; i++){
             if(s[i] == ' ' && ans.length()){
                 st.push(ans);
-                // cout << ans << " ";
                 ans = "";
             }
-            // cout << s[i] << " ";
             if(s[i] != ' ')
                 ans += s[i];
         }
         if(ans.length() != 0)
             st.push(ans);
-        // cout << ans ;
         ans = "";
         while(st.size()){
             string top = st.top();
