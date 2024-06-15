@@ -3,28 +3,22 @@ class Solution {
         int ans = 0;
         int n = s.length();
         if(n == 0) return 0;
-        HashSet<Character> mp = new HashSet<>();
-        int max = 1;
-        int count = 0;
-        int i = 0;
-        int j = 0;
-        while(i < n){
-            if(mp.contains(s.charAt(i))){
-                mp.clear();
-                max = Math.max(max,count);
-                count = 0;
-                i = j + 1;
-            }
-            else {
-                if(count == 0){
-                    j = i;
-                }
-                mp.add(s.charAt(i));
-                count++;
-                i++;
-            }
+        // if(n == 1) return 1;
+        int max = 0;
+        int start = -1;
+        int [] arr = new int[256];
+        for(int i = 0;i < 256; i++){
+            arr[i] = -1;
         }
-        max = Math.max(max,count);
+        for(int i = 0;i < s.length();i++){
+            char ch = s.charAt(i);
+            if(arr[ch] > start){
+            start = arr[ch];
+            }
+            // store latest occurence
+            arr[ch] = i;
+            max = Math.max(max,i-start);
+        }
         return max;
     }
 }
